@@ -2,5 +2,5 @@ runtime: python38
 entrypoint: gunicorn -b :$PORT app:app
 
 handlers:
-- url: /
+- url: /.*
   script: app.app
