@@ -7,5 +7,12 @@ handlers:
 - url: /templates
   static_dir: templates/
 
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /
+  script: app.app
+
 - url: /.*
   script: auto
