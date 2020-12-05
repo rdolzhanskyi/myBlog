@@ -12,7 +12,4 @@ handlers:
   upload: favicon.ico
 
 - url: /
-  script: app.app
-
-- url: /.*
   script: auto
