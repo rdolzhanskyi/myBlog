@@ -1,7 +1,5 @@
 runtime: python3
 entrypoint: gunicorn -b :$PORT app:app
-api_version: 1
-threadsafe: true
 
 handlers:
 - url: /
