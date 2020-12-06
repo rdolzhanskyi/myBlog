@@ -42,7 +42,7 @@ def post_delete(id):
         db.session.commit()
         return redirect('/posts')
     except:
-        return "Error: Article wasn't deleted!"
+        return "Error: Article '" + str(article.title) + "' wasn't deleted!"
 
 
 @ app.route("/create", methods=['POST', 'GET'])
@@ -59,7 +59,7 @@ def create():
             db.session.commit()
             return redirect('/posts')
         except:
-            return "Error: Article wasn't created!"
+            return "Error: Article '" + str(title) + "' wasn't created!"
 
     else:
         return render_template('create.html')
@@ -77,7 +77,7 @@ def update(id):
             db.session.commit()
             return redirect('/posts')
         except:
-            return "Error: Article wasn't updated!"
+            return "Error: Article '" + str(article.title) + "' wasn't updated!"
 
     else:
 
