@@ -38,8 +38,8 @@ def post_delete(id):
     article = Article.query.get_or_404(id)
     
     try:
-        db.session.delete(article)
-        db.session.commit()
+        #db.session.delete(article)
+        #db.session.commit()
         return redirect('/posts')
     except:
         return "Error: Article '" + str(article.title) + "' wasn't deleted!"
@@ -55,8 +55,8 @@ def create():
         article = Article(title=title, intro=intro, text=text)
 
         try:
-            db.session.add(article)
-            db.session.commit()
+            #db.session.add(article)
+            #db.session.commit()
             return redirect('/posts')
         except:
             return "Error: Article '" + str(title) + "' wasn't created!"
@@ -69,12 +69,12 @@ def create():
 def update(id):
     article = Article.query.get(id)
     if request.method == "POST":
-        article.title = request.form['title']
-        article.intro = request.form['intro']
-        article.text = request.form['text']
+        #article.title = request.form['title']
+        #article.intro = request.form['intro']
+        #article.text = request.form['text']
 
         try:
-            db.session.commit()
+            #db.session.commit()
             return redirect('/posts')
         except:
             return "Error: Article '" + str(article.title) + "' wasn't updated!"
